@@ -23,7 +23,7 @@ if (EXISTS ${picoVscode})
     include(${picoVscode})
 endif()
 # ====================================================================================
-set(PICO_BOARD pico2_w CACHE STRING "Board type")
+set(PICO_BOARD pico_w CACHE STRING "Board type")
 
 # Pull in Raspberry Pi Pico SDK (must be before project)
 include(pico_sdk_import.cmake)
@@ -46,7 +46,9 @@ pico_enable_stdio_usb(pwm 1)
 
 # Add the standard library to the build
 target_link_libraries(pwm
-        pico_stdlib)
+        pico_stdlib
+        hardware_pwm
+        hardware_pio)
 
 # Add the standard include files to the build
 target_include_directories(pwm PRIVATE
