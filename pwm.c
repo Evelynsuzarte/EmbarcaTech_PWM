@@ -27,7 +27,7 @@ int main() {
     uint channel = pwm_gpio_to_channel(SERVO_PIN);
     
     // Configuração do PWM 
-    pwm_set_clkdiv(slice_num, 125.0);   
+    pwm_set_clkdiv(slice_num, 64.0f);   
     pwm_set_wrap(slice_num, 24999);     
     pwm_set_enabled(slice_num, true);
     
